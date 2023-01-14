@@ -42,12 +42,13 @@ void RandoNumber() {
   tft.setCursor(0, 0);
   tft.setTextColor(ST77XX_WHITE);
   tft.print("Ready?");
-  delay(3000);
+    haptic();
+  delay(1000);
   tft.fillScreen(0);
   tft.setTextSize(10);
   tft.setCursor(60, 60);
   tft.setTextColor(ST77XX_WHITE);
-     tft.print(randNumber);
+  ft.print(randNumber);
 }
 
 void RandoNumber2() {
@@ -58,10 +59,17 @@ void RandoNumber2() {
   tft.setCursor(0, 0);
   tft.setTextColor(ST77XX_WHITE);
   tft.print("Again?");
-  delay(3000);
+    haptic();
+  delay(1000);
   tft.fillScreen(0);
   tft.setTextSize(10);
   tft.setCursor(60, 60);
   tft.setTextColor(ST77XX_BLUE);
      tft.print(randNumber);
+}
+
+void haptic() {
+  digitalWrite(7, HIGH);
+  delay(3000);
+  digitalWrite(7, LOW);
 }
