@@ -2,6 +2,8 @@
 #include <Adafruit_ST7789.h> // Hardware-specific library for ST7789
 #include <SPI.h>             // Arduino library
 
+//SCL to pin 13
+//SDA to pin 11
 #define TFT_CS    10  // define chip select pin
 #define TFT_DC     9  // define data/command pin
 #define TFT_RST    8  // define reset pin, or set to -1 and connect to Arduino RESET pin
@@ -48,7 +50,7 @@ void RandoNumber() {
   tft.setTextSize(10);
   tft.setCursor(60, 60);
   tft.setTextColor(ST77XX_WHITE);
-  ft.print(randNumber);
+    tft.print(randNumber);
 }
 
 void RandoNumber2() {
@@ -65,10 +67,11 @@ void RandoNumber2() {
   tft.setTextSize(10);
   tft.setCursor(60, 60);
   tft.setTextColor(ST77XX_BLUE);
-     tft.print(randNumber);
+    tft.print(randNumber);
 }
 
 void haptic() {
+  pinMode(7, OUTPUT);
   digitalWrite(7, HIGH);
   delay(3000);
   digitalWrite(7, LOW);
